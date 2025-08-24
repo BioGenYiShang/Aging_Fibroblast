@@ -1,0 +1,17 @@
+skin_bulk:
+  donors: 14
+  sources:
+    - GSE130973
+    - HRA000395
+melanoma:
+  geo: GSE115978
+scc:
+  geo_sc: GSE218170
+  geo_visium: GSE208253
+bcc:
+  arrayexpress_sc: E-MTAB-13085
+  arrayexpress_visium: E-MTAB-13084
+references:
+  genome: GRCh38
+  cellranger_version: "6.1.2"
+  spaceranger_version: "1.3.1"

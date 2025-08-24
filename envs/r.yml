@@ -1,0 +1,24 @@
+name: skin-aging-atlas-r
+channels: [conda-forge, bioconda, defaults, r]
+dependencies:
+  - r-base=4.2.2
+  - r-devtools
+  - r-seurat>=4.4.0
+  - r-scran
+  - r-scater
+  - r-singlecellexperiment
+  - r-summarizedexperiment
+  - r-ggplot2
+  - r-dplyr
+  - r-tidyr
+  - r-readr
+  - r-stringr
+  - r-complexheatmap
+  - r-monocle3
+  - r-igraph
+  - r-survival
+  - r-survminer
+  - r-remotes
+  - r-SeuratObject
+  - r-matrix
+  - r-patchwork

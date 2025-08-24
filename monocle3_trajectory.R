@@ -1,0 +1,16 @@
+#!/usr/bin/env Rscript
+suppressPackageStartupMessages({ library(Seurat); library(monocle3); library(dplyr); library(ggplot2) })
+args <- commandArgs(trailingOnly=TRUE)
+if (length(args) < 2) stop("Usage: Rscript monocle3_trajectory.R <seurat_fibroblast_rds> <outdir>")
+fib_path <- args[1]; outdir <- args[2]
+dir.create(outdir, showWarnings = FALSE, recursive = TRUE)
+fib <- readRDS(fib_path)
+cds <- as.cell_data_set(fib)
+cds <- preprocess_cds(cds, num_dim=50)
+cds <- reduce_dimension(cds)
+cds <- cluster_cells(cds)
+cds <- learn_graph(cds)
+cds <- order_cells(cds)
+pdf(file.path(outdir, "fibroblast_pseudotime.pdf"), width=6, height=5)
+print(plot_cells(cds, color_cells_by="pseudotime"))
+dev.off()
